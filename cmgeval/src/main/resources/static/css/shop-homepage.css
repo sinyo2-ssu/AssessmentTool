@@ -1,0 +1,96 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 36px;
+}
+
+
+*{margin:0; padding:0;}
+.graph{
+  width:100px; 
+  height: 300px; 
+  /*border-bottom: 1px solid #fff;*/
+  /*border-left: 1px solid #fff;*/
+  margin: 20px auto;
+  position:relative;
+}
+.graph-bar{
+  display: inline-block;
+  position: absolute;
+  width: 30px; 
+  bottom:0; 
+  perspective:200px;
+  background: rgb(0, 128, 255);box-shadow: 1px -1px rgb(0, 128, 192), 
+  	2px -2px rgb(0, 128, 192), 
+    3px -3px rgb(0, 128, 192),   
+    4px -4px rgb(0, 128, 192), 
+    5px -5px rgb(0, 128, 192), 
+    6px -6px rgb(0, 128, 192), 
+    7px -7px   rgb(0, 128, 192), 
+    8px -8px rgb(0, 128, 192), 
+    9px -9px rgb(0, 128, 192), 
+    10px -10px rgb(0, 128, 192);
+}
+
+
+.pie {
+  border-radius: 100%;
+  height: calc(var(--size, 200) * 1.3px);
+  overflow: hidden;
+  position: relative;
+  width: calc(var(--size, 200) * 1.3px);
+}
+.pie__segment {
+  --a: calc(var(--over50, 0) * -100%);
+  --b: calc((1 + var(--over50, 0)) * 100%);
+  --degrees: calc((var(--offset, 0) / 100) * 360);
+  -webkit-clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
+  clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+          transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  width: 100%;
+  z-index: calc(1 + var(--over50));
+}
+.pie__segment:after,
+.pie__segment:before {
+  background: var(--bg, #e74c3c);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.pie__segment:before {
+  --degrees: calc((var(--value, 45) / 100) * 360);
+  -webkit-transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+          transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+.pie__segment:after {
+  opacity: var(--over50, 0);
+}
+* {
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+input {
+  min-width: 80px;
+}
+.actions {
+  display: grid;
+  grid-gap: 4px;
+  grid-template-columns: auto auto;
+  z-index: 99;
+}
+  
